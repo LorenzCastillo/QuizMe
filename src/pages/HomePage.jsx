@@ -5,7 +5,7 @@ import Categories from "../../categories.json";
 import { useState } from "react";
 
 const HomePage = () => {
-	const [categories, setCategories] = useState(Categories);
+	const [categories] = useState(Categories);
 
 	return (
 		<>
