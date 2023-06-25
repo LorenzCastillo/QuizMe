@@ -1,0 +1,98 @@
+[
+  {
+    "category": "General Knowledge",
+    "description": "Want to take a test on multiple subjects? Try a General Knowledge test"
+  },
+  {
+    "category": "Entertainment: Books",
+    "description": "Do you read books? Test your knowledge to see how much you know"
+  },
+  {
+    "category": "Entertainment: Film",
+    "description": "Sit down and enjoy your bowl of popcorn while you test to see how much you know about films"
+  },
+  {
+    "category": "Entertainment: Music",
+    "description": "Take questions related to music, everyone loves music!"
+  },
+  {
+    "category": "Entertainment: Musicals & Theatres",
+    "description": "Try to test your knowledge on musicals & theatres"
+  },
+  {
+    "category": "Entertainment: Television",
+    "description": "Think you know a lot about television? Find out with this quiz here!"
+  },
+  {
+    "category": "Entertainment: Video Games",
+    "description": "If you're a gamer, I'm sure you can ace this quiz here"
+  },
+  {
+    "category": "Entertainment: Board Games",
+    "description": "Test your knowledge on Board Games"
+  },
+  {
+    "category": "Science & Nature",
+    "description": "Take a deep dive in Science and Nature"
+  },
+  {
+    "category": "Science: Computers",
+    "description": "You think you know a lot about computers? Find out here"
+  },
+  {
+    "category": "Science: Mathematics",
+    "description": "Think you're faster than a calculator?"
+  },
+  {
+    "category": "Mythology",
+    "description": "Test your knowledge on Mythology"
+  },
+  {
+    "category": "Sports",
+    "description": "How much do you really know about sports? Test yourself here!"
+  },
+  {
+    "category": "Geography",
+    "description": "If you ever wanted to travel the world, I'm sure you can do well here!"
+  },
+  {
+    "category": "History",
+    "description": "Test your knowledge on the history on earth"
+  },
+  {
+    "category": "Politics",
+    "description": "Are you into politics? Try testing your knowledge here!"
+  },
+  {
+    "category": "Art",
+    "description": "Feeling artsy? Take a quiz based on art!"
+  },
+  {
+    "category": "Celebrities",
+    "description": "Test your knowwledge on Celebrities"
+  },
+  {
+    "category": "Animals",
+    "description": "Are you an animal lover? Try testing your knowledge on animals"
+  },
+  {
+    "category": "Vehicles",
+    "description": "Do you love vehicles? See how much you know"
+  },
+  {
+    "category": "Entertainment: Comics",
+    "description": "Do you read comic books? Test your knowledge to see how much you know about comics"
+  },
+  {
+    "category": "Science: Gadgets",
+    "description": "Let's talk tech... Show me how much you know about tech"
+  },
+  {
+    "category": "Entertainment: Japanese Anime & Manga",
+    "description": "Do you watch Anime or read Manga? Let's find out how much anime you've consumed"
+  },
+  {
+    "category": "Entertainment: Cartoon & Animations",
+    "description": "Ever watch cartoons as a kid or still do? Test your knowledge here!"
+  }
+]
