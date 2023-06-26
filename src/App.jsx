@@ -8,6 +8,7 @@ import { useRoutes } from "react-router-dom";
 import { useState } from "react";
 import DifficultyPage from "./pages/DifficultyPage";
 import QuizPage from "./pages/QuizPage";
+import ResultsPage from "./pages/ResultsPage";
 const App = () => {
 
 	const [quizData, setQuizData] = useState([]);
@@ -39,6 +40,13 @@ const App = () => {
 			element:
 			<QuizContext.Provider value={{ quizData, setQuizData }}>
 				<QuizPage />
+			</QuizContext.Provider>
+		},
+		{
+			path: "/:category/:questions/:difficulty/results",
+			element:
+			<QuizContext.Provider value={{ quizData, setQuizData }}>
+				<ResultsPage />
 			</QuizContext.Provider>
 		}
 	]);
