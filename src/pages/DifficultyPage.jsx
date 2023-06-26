@@ -1,5 +1,5 @@
 // Local Imports
-import AmountChoice from "../components/AmountChoice";
+import DifficultyChoice from "../components/DifficultyChoice";
 import Navbar from "../components/Navbar";
 
 const DifficultyPage = () => {
@@ -13,9 +13,9 @@ const DifficultyPage = () => {
 				</h1>
 
 				<div className="flex flex-col mt-8 gap-8">
-					<AmountChoice choice={"Easy"} />
-					<AmountChoice choice={"Medium"} />
-					<AmountChoice choice={"Hard"} />
+					<DifficultyChoice choice={"Easy"} value={"easy"} />
+					<DifficultyChoice choice={"Medium"} value={"medium"} />
+					<DifficultyChoice choice={"Hard"} value={"hard"} />
 				</div>
 			</div>
 		</>

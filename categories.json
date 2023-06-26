@@ -1,98 +1,122 @@
 [
   {
     "category": "General Knowledge",
-    "description": "Want to take a test on multiple subjects? Try a General Knowledge test"
+    "description": "Want to take a test on multiple subjects? Try a General Knowledge test",
+    "value": 9
   },
   {
     "category": "Entertainment: Books",
-    "description": "Do you read books? Test your knowledge to see how much you know"
+    "description": "Do you read books? Test your knowledge to see how much you know",
+    "value": 10
   },
   {
     "category": "Entertainment: Film",
-    "description": "Sit down and enjoy your bowl of popcorn while you test to see how much you know about films"
+    "description": "Sit down and enjoy your bowl of popcorn while you test to see how much you know about films",
+    "value": 11
   },
   {
     "category": "Entertainment: Music",
-    "description": "Take questions related to music, everyone loves music!"
+    "description": "Take questions related to music, everyone loves music!",
+    "value": 12
   },
   {
     "category": "Entertainment: Musicals & Theatres",
-    "description": "Try to test your knowledge on musicals & theatres"
+    "description": "Try to test your knowledge on musicals & theatres",
+    "value": 13
   },
   {
     "category": "Entertainment: Television",
-    "description": "Think you know a lot about television? Find out with this quiz here!"
+    "description": "Think you know a lot about television? Find out with this quiz here!",
+    "value": 14
   },
   {
     "category": "Entertainment: Video Games",
-    "description": "If you're a gamer, I'm sure you can ace this quiz here"
+    "description": "If you're a gamer, I'm sure you can ace this quiz here",
+    "value": 15
   },
   {
     "category": "Entertainment: Board Games",
-    "description": "Test your knowledge on Board Games"
+    "description": "Test your knowledge on Board Games",
+    "value": 16
   },
   {
     "category": "Science & Nature",
-    "description": "Take a deep dive in Science and Nature"
+    "description": "Take a deep dive in Science and Nature",
+    "value": 17
   },
   {
     "category": "Science: Computers",
-    "description": "You think you know a lot about computers? Find out here"
+    "description": "You think you know a lot about computers? Find out here",
+    "value": 18
   },
   {
     "category": "Science: Mathematics",
-    "description": "Think you're faster than a calculator?"
+    "description": "Think you're faster than a calculator?",
+    "value": 19
   },
   {
     "category": "Mythology",
-    "description": "Test your knowledge on Mythology"
+    "description": "Test your knowledge on Mythology",
+    "value": 20
   },
   {
     "category": "Sports",
-    "description": "How much do you really know about sports? Test yourself here!"
+    "description": "How much do you really know about sports? Test yourself here!",
+    "value": 21
   },
   {
     "category": "Geography",
-    "description": "If you ever wanted to travel the world, I'm sure you can do well here!"
+    "description": "If you ever wanted to travel the world, I'm sure you can do well here!",
+    "value": 22
   },
   {
     "category": "History",
-    "description": "Test your knowledge on the history on earth"
+    "description": "Test your knowledge on the history on earth",
+    "value": 23
   },
   {
     "category": "Politics",
-    "description": "Are you into politics? Try testing your knowledge here!"
+    "description": "Are you into politics? Try testing your knowledge here!",
+    "value": 24
   },
   {
     "category": "Art",
-    "description": "Feeling artsy? Take a quiz based on art!"
+    "description": "Feeling artsy? Take a quiz based on art!",
+    "value": 25
   },
   {
     "category": "Celebrities",
-    "description": "Test your knowwledge on Celebrities"
+    "description": "Test your knowwledge on Celebrities",
+    "value": 26
   },
   {
     "category": "Animals",
-    "description": "Are you an animal lover? Try testing your knowledge on animals"
+    "description": "Are you an animal lover? Try testing your knowledge on animals",
+    "value": 27
   },
   {
     "category": "Vehicles",
-    "description": "Do you love vehicles? See how much you know"
+    "description": "Do you love vehicles? See how much you know",
+    "value": 28
   },
   {
     "category": "Entertainment: Comics",
-    "description": "Do you read comic books? Test your knowledge to see how much you know about comics"
+    "description": "Do you read comic books? Test your knowledge to see how much you know about comics",
+    "value": 29
   },
   {
     "category": "Science: Gadgets",
-    "description": "Let's talk tech... Show me how much you know about tech"
+    "description": "Let's talk tech... Show me how much you know about tech",
+    "value": 30
   },
   {
     "category": "Entertainment: Japanese Anime & Manga",
-    "description": "Do you watch Anime or read Manga? Let's find out how much anime you've consumed"
+    "description": "Do you watch Anime or read Manga? Let's find out how much anime you've consumed",
+    "value": 31
   },
   {
     "category": "Entertainment: Cartoon & Animations",
-    "description": "Ever watch cartoons as a kid or still do? Test your knowledge here!"
+    "description": "Ever watch cartoons as a kid or still do? Test your knowledge here!",
+    "value": 32
   }
 ]

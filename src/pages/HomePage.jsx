@@ -1,5 +1,5 @@
 // Local Imports
-import Card from "../components/Card";
+import QuizChoiceCard from "../components/QuizChoiceCard";
 import Navbar from "../components/Navbar";
 import Categories from "../../categories.json";
 import { useState } from "react";
@@ -24,7 +24,7 @@ const HomePage = () => {
 						categories.map((item) => {
 							return (
 							// eslint-disable-next-line react/jsx-key
-								<Card title={item.category} description={item.description}/>
+								<QuizChoiceCard title={item.category} description={item.description} value={item.value}/>
 							);
 						})
 					}

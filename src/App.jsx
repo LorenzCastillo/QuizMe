@@ -1,51 +1,52 @@
 // Local Imports
 import "./App.css";
-import QuizContext from "../context/QuizContext";
+import QuizContext from "./context/QuizContext";
 import AmountOfQuestionsPage from "./pages/AmountOfQuestionsPage";
 import HomePage from "./pages/HomePage";
-// 3rd Party Imports
-import { useRoutes } from "react-router-dom";
-import { useState } from "react";
 import DifficultyPage from "./pages/DifficultyPage";
 import QuizPage from "./pages/QuizPage";
 import ResultsPage from "./pages/ResultsPage";
+// 3rd Party Imports
+import { useRoutes } from "react-router-dom";
+import { useState } from "react";
+
 const App = () => {
 
-	const [quizData, setQuizData] = useState([]);
+	const [quizLink, setQuizLink] = useState("");
 
 	const route = useRoutes([
 		{
 			path: "/",
 			element:
-			<QuizContext.Provider value={{ quizData, setQuizData }}>
+			<QuizContext.Provider value={{ quizLink, setQuizLink }}>
 				<HomePage/>
 			</QuizContext.Provider>
 		},
 		{
-			path: "/:category/questionsAmount",
+			path: "/:category/amount",
 			element:
-			<QuizContext.Provider value={{ quizData, setQuizData }}>
+			<QuizContext.Provider value={{ quizLink, setQuizLink }}>
 				<AmountOfQuestionsPage/>
 			</QuizContext.Provider>
 		},
 		{
-			path: "/:category/:questions/difficulty",
+			path: "/:category/:amount/difficulty",
 			element:
-			<QuizContext.Provider value={{ quizData, setQuizData }}>
+			<QuizContext.Provider value={{ quizLink, setQuizLink }}>
 				<DifficultyPage />
 			</QuizContext.Provider>
 		},
 		{
-			path: "/:category/:questions/:difficulty/quiz",
+			path: "/:category/:amount/:difficulty/quiz",
 			element:
-			<QuizContext.Provider value={{ quizData, setQuizData }}>
+			<QuizContext.Provider value={{ quizLink, setQuizLink }}>
 				<QuizPage />
 			</QuizContext.Provider>
 		},
 		{
-			path: "/:category/:questions/:difficulty/results",
+			path: "/:category/:amount/:difficulty/results",
 			element:
-			<QuizContext.Provider value={{ quizData, setQuizData }}>
+			<QuizContext.Provider value={{ quizLink, setQuizLink }}>
 				<ResultsPage />
 			</QuizContext.Provider>
 		}

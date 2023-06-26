@@ -1,4 +1,5 @@
-const QuizChoice = (props) => {
+/* eslint-disable react/prop-types */
+const QuizOption = (props) => {
 	return (
 		<>
 			<div className="flex w-96 h-20 bg-custom-red text-white rounded-lg items-center mx-4 my-2 px-12">
@@ -8,4 +9,4 @@ const QuizChoice = (props) => {
 	);
 };
 
-export default QuizChoice;
+export default QuizOption;

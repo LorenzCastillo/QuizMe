@@ -7,12 +7,12 @@ const AmountOfQuestionsPage = () => {
 		<>
 			<Navbar/>
 			<div className="flex flex-col w-full my-10 items-center">
-				<h1 className="font-alte-bold text-4xl ">
+				<h1 className="font-alte-bold text-4xl text-center">
 					<span className="text-white">Choose the</span>
 					<span className="text-custom-red"> amount </span>
 					<span className="text-white">of</span>
 				</h1>
-				<h1 className="font-alte-bold text-4xl">
+				<h1 className="font-alte-bold text-4xl text-center">
 					<span className="text-white">questions for your quiz</span>
 				</h1>
 
