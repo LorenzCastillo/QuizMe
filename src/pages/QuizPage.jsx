@@ -31,7 +31,6 @@ const QuizPage = () => {
 			.then(response => {
 				setData(response.data);
 				setFetchedData(true);
-				console.log(response.data);
 			})
 			.catch(error => {
 				console.log(error);

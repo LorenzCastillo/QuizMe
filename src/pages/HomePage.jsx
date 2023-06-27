@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 // Local Imports
 import QuizChoiceCard from "../components/QuizChoiceCard";
 import Navbar from "../components/Navbar";
@@ -24,7 +25,6 @@ const HomePage = () => {
 					{
 						categories.map((item) => {
 							return (
-							// eslint-disable-next-line react/jsx-key
 								<QuizChoiceCard title={item.category} description={item.description} value={item.value}/>
 							);
 						})
