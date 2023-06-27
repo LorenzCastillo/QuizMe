@@ -2,6 +2,7 @@
 import QuizChoiceCard from "../components/QuizChoiceCard";
 import Navbar from "../components/Navbar";
 import Categories from "../../categories.json";
+// 3rd Party Imports
 import { useState } from "react";
 
 const HomePage = () => {

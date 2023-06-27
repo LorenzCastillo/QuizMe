@@ -1,5 +1,10 @@
+import { useContext } from "react";
+import QuizContext from "../context/QuizContext";
+
 /* eslint-disable react/prop-types */
 const QuizOption = (props) => {
+	const { quiz, count, setCount } = useContext(QuizContext);
+
 	return (
 		<>
 			<div className="flex w-96 h-20 bg-custom-red text-white rounded-lg items-center mx-4 my-2 px-12">

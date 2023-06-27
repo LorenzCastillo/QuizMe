@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 // Local Imports
 import { Link } from "react-router-dom";
-import QuizContext from "../context/QuizContext";
+import LinkContext from "../context/LinkContext";
 // 3rd Party Imports
 import { useContext } from "react";
 
 
 const DifficultyChoice = (props) => {
-	const { quizLink, setQuizLink } = useContext(QuizContext);
+	const { quizLink, setQuizLink } = useContext(LinkContext);
 
 	const handleQuizContext = () => {
 		setQuizLink(`${quizLink}/${props.value}`);

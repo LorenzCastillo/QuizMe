@@ -1,6 +1,6 @@
 // Local Imports
 import "./App.css";
-import QuizContext from "./context/QuizContext";
+import LinkContext from "./context/LinkContext";
 import AmountOfQuestionsPage from "./pages/AmountOfQuestionsPage";
 import HomePage from "./pages/HomePage";
 import DifficultyPage from "./pages/DifficultyPage";
@@ -18,37 +18,37 @@ const App = () => {
 		{
 			path: "/",
 			element:
-			<QuizContext.Provider value={{ quizLink, setQuizLink }}>
+			<LinkContext.Provider value={{ quizLink, setQuizLink }}>
 				<HomePage/>
-			</QuizContext.Provider>
+			</LinkContext.Provider>
 		},
 		{
 			path: "/:category/amount",
 			element:
-			<QuizContext.Provider value={{ quizLink, setQuizLink }}>
+			<LinkContext.Provider value={{ quizLink, setQuizLink }}>
 				<AmountOfQuestionsPage/>
-			</QuizContext.Provider>
+			</LinkContext.Provider>
 		},
 		{
 			path: "/:category/:amount/difficulty",
 			element:
-			<QuizContext.Provider value={{ quizLink, setQuizLink }}>
+			<LinkContext.Provider value={{ quizLink, setQuizLink }}>
 				<DifficultyPage />
-			</QuizContext.Provider>
+			</LinkContext.Provider>
 		},
 		{
 			path: "/:category/:amount/:difficulty/quiz",
 			element:
-			<QuizContext.Provider value={{ quizLink, setQuizLink }}>
+			<LinkContext.Provider value={{ quizLink, setQuizLink }}>
 				<QuizPage />
-			</QuizContext.Provider>
+			</LinkContext.Provider>
 		},
 		{
 			path: "/:category/:amount/:difficulty/results",
 			element:
-			<QuizContext.Provider value={{ quizLink, setQuizLink }}>
+			<LinkContext.Provider value={{ quizLink, setQuizLink }}>
 				<ResultsPage />
-			</QuizContext.Provider>
+			</LinkContext.Provider>
 		}
 	]);
 
