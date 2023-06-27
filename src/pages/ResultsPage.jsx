@@ -1,8 +1,10 @@
 // Local Imports
-import { useContext } from "react";
 import Navbar from "../components/Navbar";
 import QuizContext from "../context/QuizContext";
+// 3rd Party Imports
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+
 
 const ResultsPage = () => {
 
@@ -19,7 +21,7 @@ const ResultsPage = () => {
 				<h1 className="text-white text-4xl font-alte-bold mt-14">Correct Answer</h1>
 				<p className="text-white text-3xl font-alte-bold mt-2">{correctAnswers}/{quizType[1]}</p>
 
-				<div className="flex flex-row gap-6 mt-32">
+				<div className="mt-32">
 					<Link to={"/"}>
 						<button onClick={resetValues}>
 							<div className="flex w-60 h-14 bg-custom-red rounded-lg items-center justify-center">

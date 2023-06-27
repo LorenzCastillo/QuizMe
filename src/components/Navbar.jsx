@@ -1,9 +1,10 @@
+// Local Imports
+import QuizContext from "../context/QuizContext";
 // 3rd Party Imports
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import QuizContext from "../context/QuizContext";
 
 const Navbar = () => {
 
