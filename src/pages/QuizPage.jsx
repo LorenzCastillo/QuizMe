@@ -1,27 +1,24 @@
 // Local Imports
 import Navbar from "../components/Navbar";
 import QuizOption from "../components/QuizOption";
-import LinkContext from "../context/LinkContext";
 import QuizContext from "../context/QuizContext";
 // 3rd Party Imports
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
-
+import he from "he";
 
 const QuizPage = () => {
 
+	const { quizLink, quiz, setQuiz, questionsAnswered, isCorrect, isIncorrect } = useContext(QuizContext);
 	const [data, setData] = useState({});
-	const [quiz, setQuiz] = useState([]);
 	const [fetchedData, setFetchedData] = useState(false);
 	const [questionsRandomized, setQuestionsRandomized] = useState(false);
-	const [count, setCount] = useState(0);
 
-	const { quizLink } = useContext(LinkContext);
 	const quizType = quizLink.split("/");
 
 	useEffect(() => {
 		fetchData();
-	});
+	}, []);
 
 	useEffect(() => {
 		if (fetchedData) {
@@ -29,17 +26,12 @@ const QuizPage = () => {
 		}
 	}, [fetchedData]);
 
-	useEffect(() => {
-		if (questionsRandomized) {
-			console.log("QUIZ", quiz);
-		}
-	}, [questionsRandomized]);
-
 	const fetchData = async () => {
 		axios.get(`https://opentdb.com/api.php?amount=${quizType[1]}&category=${quizType[0]}&difficulty=${quizType[2]}&type=multiple`)
 			.then(response => {
 				setData(response.data);
 				setFetchedData(true);
+				console.log(response.data);
 			})
 			.catch(error => {
 				console.log(error);
@@ -53,7 +45,7 @@ const QuizPage = () => {
 
 		for (let i = 0; i < item.length; i++) {
 			let answers = item[i];
-			let x = answers.length - 1;
+			let x = answers.length - 2;
 
 			while (--x > 0) {
 				let temp = Math.floor(Math.random() * (x + 1));
@@ -65,37 +57,38 @@ const QuizPage = () => {
 				answer2: answers[1],
 				answer3: answers[2],
 				answer4: answers[3],
-				question: answers[4]
+				question: answers[4],
+				answer: answers[5]
 			};
 
-			console.log("TEST", randomizedAnswers);
 			processedRandomizedAnswers.push(randomizedAnswers);
 		}
 
 		return processedRandomizedAnswers;
 	};
 
-	const addAnswers = async () => {
-		const questions = await data.results;
-		const processedQuestions = await questions.map((item) => {
+	const addAnswers = () => {
+		const questions = data.results;
+		const processedQuestions = questions.map((item) => {
+
 			return [
-				item.correct_answer,
-				item.incorrect_answers[0],
-				item.incorrect_answers[1],
-				item.incorrect_answers[2],
-				item.question
+				he.decode(item.correct_answer),
+				he.decode(item.incorrect_answers[0]),
+				he.decode(item.incorrect_answers[1]),
+				he.decode(item.incorrect_answers[2]),
+				he.decode(item.question),
+				he.decode(item.correct_answer)
 			];
 		});
 
-		const processedQuiz = await randomizeAnswers(processedQuestions);
+		const processedQuiz = randomizeAnswers(processedQuestions);
 
 		setQuiz(processedQuiz);
 		setQuestionsRandomized(true);
 	};
 
-	return !questionsRandomized ? (
+	return (!questionsRandomized || questionsAnswered >= quizType[1]) ? (
 		<>
-
 			<Navbar/>
 			<div className="flex flex-col w-full my-10 items-center">
 				<div className="w-[28rem] h-32">
@@ -105,21 +98,25 @@ const QuizPage = () => {
 		</>
 	) : (
 		<>
-			<QuizContext.Provider value={{ quiz, count, setCount }}>
-				<Navbar/>
-				<div className="flex flex-col w-full my-10 items-center">
-					<div className="w-[28rem] h-32">
-						<h1 className="font-alte-bold text-2xl text-white text-center">#{count + 1}: {quiz[0].question}</h1>
-					</div>
-
-					<div className="grid md:grid-cols-2 grid-cols-1">
-						<QuizOption choice={quiz[0].answer1}/>
-						<QuizOption choice={quiz[0].answer2}/>
-						<QuizOption choice={quiz[0].answer3}/>
-						<QuizOption choice={quiz[0].answer4}/>
-					</div>
+			<Navbar/>
+			<div className="flex flex-col w-full my-10 items-center">
+				<div className="w-[62rem] h-32">
+					<h1 className="font-alte-bold text-3xl text-white text-center">#{questionsAnswered + 1}: {quiz[questionsAnswered].question}</h1>
 				</div>
-			</QuizContext.Provider>
+
+				<div className="grid md:grid-cols-2 grid-cols-1 mt-12 gap-6">
+					<QuizOption choice={quiz[questionsAnswered].answer1}/>
+					<QuizOption choice={quiz[questionsAnswered].answer2}/>
+					<QuizOption choice={quiz[questionsAnswered].answer3}/>
+					<QuizOption choice={quiz[questionsAnswered].answer4}/>
+				</div>
+				{isCorrect && (
+					<h1 className={"font-alte-bold text-4xl text-white text-center mt-24"}>Correct!</h1>
+				)}
+				{isIncorrect && (
+					<h1 className={"font-alte-bold text-4xl text-white text-center mt-24"}>Incorrect...</h1>
+				)}
+			</div>
 		</>
 	);
 };
