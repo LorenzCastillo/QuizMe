@@ -15,6 +15,14 @@ const QuizPage = () => {
 	const [location, setLocation] = useState([]);
 	const [fetchedData, setFetchedData] = useState(false);
 	const [questionsRandomized, setQuestionsRandomized] = useState(false);
+	const [animateState, setAnimateState] = useState("animate-fadeIn");
+
+	const handleAnimateState = () => {
+		setAnimateState("animate-fadeOut");
+		setTimeout(() => {
+			setAnimateState("animate-fadeIn");
+		}, "500");
+	};
 
 	const currentLocation = useLocation();
 
@@ -97,25 +105,20 @@ const QuizPage = () => {
 	return (!questionsRandomized || questionsAnswered >= location[2]) ? (
 		<>
 			<Navbar/>
-			<div className="flex flex-col w-full my-10 items-center">
-				<div className="w-[28rem] h-32">
-					<h1 className="font-alte-bold text-4xl text-white text-center">Loading...</h1>
-				</div>
-			</div>
 		</>
 	) : (
 		<>
 			<Navbar/>
-			<div className="flex flex-col w-full my-10 items-center">
-				<div className="w-[62rem] h-32">
+			<div className={`flex flex-col w-full my-10 items-center ${animateState}`}>
+				<div className="lg:w-[62rem] md:w-[40rem] w-[28rem] h-32">
 					<h1 className="font-alte-bold text-3xl text-white text-center">#{questionsAnswered + 1}: {quiz[questionsAnswered].question}</h1>
 				</div>
 
 				<div className="grid md:grid-cols-2 grid-cols-1 mt-12 gap-6">
-					<QuizOption choice={quiz[questionsAnswered].answer1}/>
-					<QuizOption choice={quiz[questionsAnswered].answer2}/>
-					<QuizOption choice={quiz[questionsAnswered].answer3}/>
-					<QuizOption choice={quiz[questionsAnswered].answer4}/>
+					<QuizOption choice={quiz[questionsAnswered].answer1} handleAnimateState={handleAnimateState}/>
+					<QuizOption choice={quiz[questionsAnswered].answer2} handleAnimateState={handleAnimateState}/>
+					<QuizOption choice={quiz[questionsAnswered].answer3} handleAnimateState={handleAnimateState}/>
+					<QuizOption choice={quiz[questionsAnswered].answer4} handleAnimateState={handleAnimateState}/>
 				</div>
 				{isCorrect && (
 					<h1 className={"font-alte-bold text-4xl text-white text-center mt-24"}>Correct!</h1>

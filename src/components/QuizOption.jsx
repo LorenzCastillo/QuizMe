@@ -15,12 +15,14 @@ const QuizOption = (props) => {
 
 
 	useEffect(() => {
+		// If revealAnswer is toggled and if this is the corresponding component with the correct answer,
+		// change the background to yellow, then after 2s, turn it back to red
 		if (revealAnswer && quiz[questionsAnswered].answer == props.choice) {
 			setBackgroundColor("bg-custom-yellow");
 
 			setTimeout(() => {
 				setBackgroundColor("bg-custom-red");
-			}, "1500");
+			}, "1200");
 		}
 	}, [revealAnswer]);
 
@@ -28,29 +30,36 @@ const QuizOption = (props) => {
 		setIsDisabled(true);
 
 		if (quiz[questionsAnswered].answer == props.choice) {
+			// If it was answered correctly, turn background green
 			setIsCorrect(true);
-			// UI
 			setCorrectAnswers(correctAnswers + 1);
 			setBackgroundColor("bg-custom-green");
 		} else {
+			// Otherwise, reveal the correct answer
 			setIsIncorrect(true);
-			// UI
 			setRevealAnswer(true);
 		}
-
+		// After 1.5s, toggle a fade in + out animation
+		// After 0.5s (which is when the opacity is fully 0) switch the question
+		// and reset all the values back
 		setTimeout(() => {
-			setIsCorrect(false);
-			setIsIncorrect(false);
-			// UI
-			setQuestionsAnswered(questionsAnswered + 1);
-			setBackgroundColor("bg-custom-red");
-			setRevealAnswer(false);
-			setIsDisabled(false);
+			// Toggle Fade Animation
+			props.handleAnimateState();
+			setTimeout(() => {
+				setIsCorrect(false);
+				setIsIncorrect(false);
+				setQuestionsAnswered(questionsAnswered + 1);
+				setBackgroundColor("bg-custom-red");
+				setRevealAnswer(false);
+				setIsDisabled(false);
 
-			if (questionsAnswered + 1 >= params[2]) {
-				navigate(`${currentLocation.pathname.replace("/quiz", "")}/results`);
-			}
-		}, "1500");
+				// If the amount of questions answered is higher than the inputted amount of questions wanted
+				// Change screen to the results page
+				if (questionsAnswered + 1 >= params[2]) {
+					navigate(`${currentLocation.pathname.replace("/quiz", "")}/results`);
+				}
+			}, "500");
+		}, "700");
 	};
 
 	return (

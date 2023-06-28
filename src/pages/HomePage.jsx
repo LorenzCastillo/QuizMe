@@ -7,12 +7,17 @@ import { useState } from "react";
 
 const HomePage = () => {
 	const [categories] = useState(Categories);
+	const [animateState, setAnimateState] = useState("");
+
+	const handleToggleAnimation = () => {
+		setAnimateState("animate-pageTurnOut");
+	};
 
 	return (
 		<>
 			<Navbar/>
 
-			<div className="flex w-full my-10 justify-center">
+			<div className={`flex w-full my-10 justify-center animate-fadeInLong ${animateState}`}>
 				<h1 className="font-alte-bold text-4xl">
 					<span className="text-white">Choose your</span>
 					<span className="text-custom-red"> Quiz</span>
@@ -24,7 +29,7 @@ const HomePage = () => {
 					{
 						categories.map((item, i) => {
 							return (
-								<ChooseQuizCard title={item.category} description={item.description} value={item.value} key={i}/>
+								<ChooseQuizCard title={item.category} description={item.description} value={item.value} handleToggleAnimation={handleToggleAnimation} animateState={animateState} key={i}/>
 							);
 						})
 					}

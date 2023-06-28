@@ -1,11 +1,21 @@
 /* eslint-disable react/prop-types */
 // 3rd Party Imports
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const ChooseQuizCard = (props) => {
+
+	const navigate = useNavigate();
+
+	const handleButtonClick = () => {
+		props.handleToggleAnimation();
+		setTimeout(() =>{
+			navigate(`/${props.value}/amount`);
+		}, "900");
+	};
+
 	return (
 		<>
-			<div className="flex flex-col w-96 h-72 bg-custom-grey rounded-xl">
+			<div className={`flex flex-col w-96 h-72 bg-custom-grey rounded-xl animate-card ${props.animateState}`}>
 				<div className="flex w-full h-14 py-8 mb-4 justify-center text-center px-4">
 					<h1 className="font-alte-bold text-2xl text-white">{props.title}</h1>
 				</div>
@@ -15,11 +25,11 @@ const ChooseQuizCard = (props) => {
 				</div>
 
 				<div className="flex w-full h-full justify-center items-center">
-					<Link to={`/${props.value}/amount`}>
+					<button onClick={handleButtonClick}>
 						<div className="flex w-52 h-14 bg-custom-red rounded-lg justify-center items-center">
 							<p className="font-alte-bold text-white text-xl">Take Quiz</p>
 						</div>
-					</Link>
+					</button>
 				</div>
 			</div>
 		</>
