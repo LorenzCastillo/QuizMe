@@ -25,7 +25,7 @@ const ChooseQuizCard = (props) => {
 
 				<div className="flex w-full h-full justify-center items-center">
 					<button onClick={handleButtonClick}>
-						<div className="flex w-52 h-14 bg-custom-red rounded-lg justify-center items-center">
+						<div className="flex w-52 h-14 bg-custom-red hover:bg-custom-red-hover shadow-custom-red rounded-lg justify-center items-center">
 							<p className="font-alte-bold text-white text-xl">Take Quiz</p>
 						</div>
 					</button>
