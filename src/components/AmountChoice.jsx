@@ -2,7 +2,6 @@
 // 3rd Party Imports
 import { useLocation, useNavigate } from "react-router-dom";
 
-
 const AmountChoice = (props) => {
 	const processedLocation = useLocation().pathname.replace("/amount", "");
 	const navigate = useNavigate();

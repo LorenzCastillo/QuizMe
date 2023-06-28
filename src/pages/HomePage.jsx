@@ -16,7 +16,6 @@ const HomePage = () => {
 	return (
 		<>
 			<Navbar/>
-
 			<div className={`flex w-full my-10 justify-center animate-fadeInLong ${animateState}`}>
 				<h1 className="font-alte-bold text-4xl">
 					<span className="text-white">Choose your</span>

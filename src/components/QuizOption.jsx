@@ -7,13 +7,12 @@ import { useContext, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const QuizOption = (props) => {
+	const currentLocation = useLocation();
+	const navigate = useNavigate();
 
 	const { quiz, questionsAnswered, setQuestionsAnswered, correctAnswers, setCorrectAnswers, setIsCorrect, setIsIncorrect, revealAnswer, setRevealAnswer, isDisabled, setIsDisabled } = useContext(QuizContext);
-	const navigate = useNavigate();
-	const currentLocation = useLocation();
 	const [params] = useState(currentLocation.pathname.split("/"));
 	const [backgroundColor, setBackgroundColor] = useState("bg-custom-red");
-
 
 	useEffect(() => {
 		// If revealAnswer is toggled and if this is the corresponding component with the correct answer,

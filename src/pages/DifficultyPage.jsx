@@ -5,8 +5,7 @@ import Navbar from "../components/Navbar";
 import { useState } from "react";
 
 const DifficultyPage = () => {
-
-	const [animateState, setAnimateState] = useState();
+	const [animateState, setAnimateState] = useState("");
 
 	const handleToggleAnimation = () => {
 		setAnimateState("animate-pageTurnOut");

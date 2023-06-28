@@ -6,12 +6,10 @@ import { useContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const ResultsPage = () => {
-
 	const { correctAnswers, resetValues } = useContext(QuizContext);
+	const [animateState, setAnimateState] = useState("");
 	const currentLocation = useLocation().pathname.split("/");
 	const navigate = useNavigate();
-
-	const [animateState, setAnimateState] = useState();
 
 	const handleButtonClick = () => {
 		setAnimateState("animate-fadeOut");

@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-// Local Imports
+// 3rd Party Imports
 import { useLocation, useNavigate } from "react-router-dom";
 
 const DifficultyChoice = (props) => {

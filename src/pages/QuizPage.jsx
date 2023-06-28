@@ -10,20 +10,12 @@ import he from "he";
 import { useLocation } from "react-router-dom";
 
 const QuizPage = () => {
-
 	const { quiz, setQuiz, questionsAnswered, isCorrect, isIncorrect } = useContext(QuizContext);
 	const [data, setData] = useState({});
 	const [location, setLocation] = useState([]);
 	const [fetchedData, setFetchedData] = useState(false);
 	const [questionsRandomized, setQuestionsRandomized] = useState(false);
 	const [animateState, setAnimateState] = useState("animate-fadeIn");
-
-	const handleAnimateState = () => {
-		setAnimateState("animate-fadeOut");
-		setTimeout(() => {
-			setAnimateState("animate-fadeIn");
-		}, "500");
-	};
 
 	const currentLocation = useLocation();
 
@@ -42,6 +34,13 @@ const QuizPage = () => {
 			addAnswers();
 		}
 	}, [fetchedData]);
+
+	const handleAnimateState = () => {
+		setAnimateState("animate-fadeOut");
+		setTimeout(() => {
+			setAnimateState("animate-fadeIn");
+		}, "500");
+	};
 
 	const fetchData = async () => {
 		axios.get(`https://opentdb.com/api.php?amount=${location[2]}&category=${location[1]}&difficulty=${location[3]}&type=multiple`)

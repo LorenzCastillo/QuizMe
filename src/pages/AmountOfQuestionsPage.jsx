@@ -5,7 +5,6 @@ import Navbar from "../components/Navbar";
 import { useState } from "react";
 
 const AmountOfQuestionsPage = () => {
-
 	const [animateState, setAnimateState] = useState("");
 
 	const handleToggleAnimation = () => {
