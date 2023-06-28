@@ -6,19 +6,27 @@ import QuizContext from "../context/QuizContext";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import he from "he";
+import { useLocation } from "react-router-dom";
 
 const QuizPage = () => {
 
-	const { quizLink, quiz, setQuiz, questionsAnswered, isCorrect, isIncorrect } = useContext(QuizContext);
+	const { quiz, setQuiz, questionsAnswered, isCorrect, isIncorrect } = useContext(QuizContext);
 	const [data, setData] = useState({});
+	const [location, setLocation] = useState([]);
 	const [fetchedData, setFetchedData] = useState(false);
 	const [questionsRandomized, setQuestionsRandomized] = useState(false);
 
-	const quizType = quizLink.split("/");
+	const currentLocation = useLocation();
 
 	useEffect(() => {
-		fetchData();
+		setLocation(currentLocation.pathname.split("/"));
 	}, []);
+
+	useEffect(() => {
+		if (location.length != 0) {
+			fetchData();
+		}
+	}, [location]);
 
 	useEffect(() => {
 		if (fetchedData) {
@@ -27,11 +35,10 @@ const QuizPage = () => {
 	}, [fetchedData]);
 
 	const fetchData = async () => {
-		axios.get(`https://opentdb.com/api.php?amount=${quizType[1]}&category=${quizType[0]}&difficulty=${quizType[2]}&type=multiple`)
+		axios.get(`https://opentdb.com/api.php?amount=${location[2]}&category=${location[1]}&difficulty=${location[3]}&type=multiple`)
 			.then(response => {
 				setData(response.data);
 				setFetchedData(true);
-				console.log(response.data);
 			})
 			.catch(error => {
 				console.log(error);
@@ -87,7 +94,7 @@ const QuizPage = () => {
 		setQuestionsRandomized(true);
 	};
 
-	return (!questionsRandomized || questionsAnswered >= quizType[1]) ? (
+	return (!questionsRandomized || questionsAnswered >= location[2]) ? (
 		<>
 			<Navbar/>
 			<div className="flex flex-col w-full my-10 items-center">

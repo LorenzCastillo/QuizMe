@@ -1,6 +1,5 @@
-/* eslint-disable react/jsx-key */
 // Local Imports
-import QuizChoiceCard from "../components/QuizChoiceCard";
+import ChooseQuizCard from "../components/ChooseQuizCard";
 import Navbar from "../components/Navbar";
 import Categories from "../../categories.json";
 // 3rd Party Imports
@@ -23,9 +22,9 @@ const HomePage = () => {
 			<div className="flex justify-center">
 				<div className="grid 3xl:grid-cols-3 xl:grid-cols-2 grid-cols-1 gap-4 sm:px-[15%]">
 					{
-						categories.map((item) => {
+						categories.map((item, i) => {
 							return (
-								<QuizChoiceCard title={item.category} description={item.description} value={item.value}/>
+								<ChooseQuizCard title={item.category} description={item.description} value={item.value} key={i}/>
 							);
 						})
 					}

@@ -19,6 +19,7 @@ const App = () => {
 	const [isCorrect, setIsCorrect] = useState(false);
 	const [isIncorrect, setIsIncorrect] = useState(false);
 	const [revealAnswer, setRevealAnswer] = useState(false);
+	const [isDisabled, setIsDisabled] = useState(false);
 
 	const resetValues = () => {
 		setQuestionsAnswered(0);
@@ -77,7 +78,9 @@ const App = () => {
 				setIsIncorrect,
 				revealAnswer,
 				setRevealAnswer,
-				resetValues
+				resetValues,
+				isDisabled,
+				setIsDisabled
 			}}>
 				<QuizPage />
 			</QuizContext.Provider>

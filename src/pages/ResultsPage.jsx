@@ -5,7 +5,6 @@ import QuizContext from "../context/QuizContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 
-
 const ResultsPage = () => {
 
 	const { quizLink, correctAnswers, resetValues } = useContext(QuizContext);
