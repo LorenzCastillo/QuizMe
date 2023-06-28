@@ -111,11 +111,11 @@ const QuizPage = () => {
 		<>
 			<Navbar/>
 			<div className={`flex flex-col w-full my-10 items-center ${animateState}`}>
-				<div className="lg:w-[62rem] md:w-[40rem] w-[28rem] h-32">
+				<div className="lg:w-[62rem] md:w-[40rem] w-[24rem] h-32">
 					<h1 className="font-alte-bold text-3xl text-white text-center">#{questionsAnswered + 1}: {quiz[questionsAnswered].question}</h1>
 				</div>
 
-				<div className="grid md:grid-cols-2 grid-cols-1 mt-12 gap-6">
+				<div className="grid md:grid-cols-2 grid-cols-1 mt-16 gap-6">
 					<QuizOption choice={quiz[questionsAnswered].answer1} handleAnimateState={handleAnimateState}/>
 					<QuizOption choice={quiz[questionsAnswered].answer2} handleAnimateState={handleAnimateState}/>
 					<QuizOption choice={quiz[questionsAnswered].answer3} handleAnimateState={handleAnimateState}/>

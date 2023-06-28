@@ -79,7 +79,7 @@ const QuizOption = (props) => {
 	return (
 		<>
 			<button onClick={handleQuizInput} disabled={isDisabled}>
-				<div className={`flex w-[26rem] h-20 ${backgroundColor} hover:${backgroundHoverColor} text-white rounded-lg items-center text-left px-12 ${glowColor}`}>
+				<div className={`flex w-[24rem] h-20 ${backgroundColor} hover:${backgroundHoverColor} text-white rounded-lg items-center text-left px-12 ${glowColor}`}>
 					<h1 className="font-alte-bold text-2xl">{props.choice}</h1>
 				</div>
 			</button>
