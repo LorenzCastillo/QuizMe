@@ -12,7 +12,6 @@ import { useState } from "react";
 
 const App = () => {
 
-	const [quizLink, setQuizLink] = useState("");
 	const [questionsAnswered, setQuestionsAnswered] = useState(0);
 	const [correctAnswers, setCorrectAnswers] = useState(0);
 	const [quiz, setQuiz] = useState([]);
@@ -25,7 +24,6 @@ const App = () => {
 		setQuestionsAnswered(0);
 		setCorrectAnswers(0);
 		setQuiz([]);
-		setQuizLink("");
 	};
 
 	const route = useRoutes([
@@ -33,7 +31,6 @@ const App = () => {
 			path: "/",
 			element:
 			<QuizContext.Provider value={{
-				setQuizLink,
 				resetValues
 			}}>
 				<HomePage/>
@@ -43,8 +40,6 @@ const App = () => {
 			path: "/:category/amount",
 			element:
 			<QuizContext.Provider value={{
-				quizLink,
-				setQuizLink,
 				resetValues
 			}}>
 				<AmountOfQuestionsPage/>
@@ -54,8 +49,6 @@ const App = () => {
 			path: "/:category/:amount/difficulty",
 			element:
 			<QuizContext.Provider value={{
-				quizLink,
-				setQuizLink,
 				resetValues
 			}}>
 				<DifficultyPage />
@@ -65,7 +58,6 @@ const App = () => {
 			path: "/:category/:amount/:difficulty/quiz",
 			element:
 			<QuizContext.Provider value={{
-				quizLink,
 				quiz,
 				setQuiz,
 				questionsAnswered,
@@ -86,10 +78,9 @@ const App = () => {
 			</QuizContext.Provider>
 		},
 		{
-			path: "/results",
+			path: "/:category/:amount/:difficulty/results",
 			element:
 			<QuizContext.Provider value={{
-				quizLink,
 				correctAnswers,
 				resetValues
 			}}>

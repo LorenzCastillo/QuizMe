@@ -3,12 +3,12 @@ import Navbar from "../components/Navbar";
 import QuizContext from "../context/QuizContext";
 // 3rd Party Imports
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const ResultsPage = () => {
 
-	const { quizLink, correctAnswers, resetValues } = useContext(QuizContext);
-	const quizType = quizLink.split("/");
+	const { correctAnswers, resetValues } = useContext(QuizContext);
+	const currentLocation = useLocation().pathname.split("/");
 
 	return (
 		<>
@@ -18,7 +18,7 @@ const ResultsPage = () => {
 				<div className="w-40 h-1.5 bg-custom-red mt-2"/>
 
 				<h1 className="text-white text-4xl font-alte-bold mt-14">Correct Answer</h1>
-				<p className="text-white text-3xl font-alte-bold mt-2">{correctAnswers}/{quizType[1]}</p>
+				<p className="text-white text-3xl font-alte-bold mt-2">{correctAnswers}/{currentLocation[2]}</p>
 
 				<div className="mt-32">
 					<Link to={"/"}>

@@ -1,17 +1,8 @@
 /* eslint-disable react/prop-types */
-// Local Imports
-import QuizContext from "../context/QuizContext";
 // 3rd Party Imports
-import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 const ChooseQuizCard = (props) => {
-	const { setQuizLink } = useContext(QuizContext);
-
-	const handleQuizContext = () => {
-		setQuizLink(`${props.value}`);
-	};
-
 	return (
 		<>
 			<div className="flex flex-col w-96 h-72 bg-custom-grey rounded-xl">
@@ -25,11 +16,9 @@ const ChooseQuizCard = (props) => {
 
 				<div className="flex w-full h-full justify-center items-center">
 					<Link to={`/${props.value}/amount`}>
-						<button onClick={handleQuizContext}>
-							<div className="flex w-52 h-14 bg-custom-red rounded-lg justify-center items-center">
-								<p className="font-alte-bold text-white text-xl">Take Quiz</p>
-							</div>
-						</button>
+						<div className="flex w-52 h-14 bg-custom-red rounded-lg justify-center items-center">
+							<p className="font-alte-bold text-white text-xl">Take Quiz</p>
+						</div>
 					</Link>
 				</div>
 			</div>

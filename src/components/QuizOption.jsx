@@ -3,14 +3,16 @@
 import QuizContext from "../context/QuizContext";
 // 3rd Party Imports
 import { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const QuizOption = (props) => {
 
-	const { quizLink, quiz, questionsAnswered, setQuestionsAnswered, correctAnswers, setCorrectAnswers, setIsCorrect, setIsIncorrect, revealAnswer, setRevealAnswer, isDisabled, setIsDisabled } = useContext(QuizContext);
-	const [backgroundColor, setBackgroundColor] = useState("bg-custom-red");
-	const quizType = quizLink.split("/");
+	const { quiz, questionsAnswered, setQuestionsAnswered, correctAnswers, setCorrectAnswers, setIsCorrect, setIsIncorrect, revealAnswer, setRevealAnswer, isDisabled, setIsDisabled } = useContext(QuizContext);
 	const navigate = useNavigate();
+	const currentLocation = useLocation();
+	const [params] = useState(currentLocation.pathname.split("/"));
+	const [backgroundColor, setBackgroundColor] = useState("bg-custom-red");
+
 
 	useEffect(() => {
 		if (revealAnswer && quiz[questionsAnswered].answer == props.choice) {
@@ -45,8 +47,8 @@ const QuizOption = (props) => {
 			setRevealAnswer(false);
 			setIsDisabled(false);
 
-			if (questionsAnswered >= quizType[1] - 1) {
-				navigate("/results");
+			if (questionsAnswered + 1 >= params[2]) {
+				navigate(`${currentLocation.pathname.replace("/quiz", "")}/results`);
 			}
 		}, "1500");
 	};
