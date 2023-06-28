@@ -31,7 +31,7 @@ const ResultsPage = () => {
 
 				<div className="mt-32">
 					<button onClick={handleButtonClick}>
-						<div className="flex w-60 h-14 bg-custom-red rounded-lg items-center justify-center">
+						<div className="flex w-60 h-14 bg-custom-red hover:bg-custom-red-hover rounded-lg items-center justify-center shadow-custom-red">
 							<p className="text-white text-2xl font-alte-bold">Home</p>
 						</div>
 					</button>

@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Categories from "../../categories.json";
 // 3rd Party Imports
 import { useState } from "react";
+import Footer from "../components/Footer";
 
 const HomePage = () => {
 	const [categories] = useState(Categories);
@@ -35,6 +36,7 @@ const HomePage = () => {
 				</div>
 			</div>
 
+			<Footer/>
 		</>
 	);
 };

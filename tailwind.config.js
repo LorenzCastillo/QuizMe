@@ -12,6 +12,7 @@ export default {
 		extend: {
 			colors: {
 				"custom-red": "#F53838",
+				"custom-red-hover": "#BF2A2A",
 				"custom-grey": "#1C1F26",
 				"custom-dark-grey": "#0E1217",
 				"custom-green": "#34AB0A",
@@ -27,6 +28,11 @@ export default {
 				fadeIn: "fadeIn 0.6s ease-in-out",
 				fadeOut: "fadeOut 0.6s ease-in-out",
 				fadeInLong: "fadeIn 1.2s ease-in-out",
+			},
+			boxShadow: {
+				"custom-red": "0px 0px 20px 0px red",
+				"custom-yellow": "0px 0px 20px 0px yellow",
+				"custom-green": "0px 0px 20px 0px green"
 			},
 			keyframes: {
 				card: {

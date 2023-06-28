@@ -16,7 +16,7 @@ const DifficultyChoice = (props) => {
 	return (
 		<>
 			<button onClick={handleButtonClick}>
-				<div className="flex w-96 h-20 bg-custom-red text-white rounded-xl items-center justify-center">
+				<div className="flex w-96 h-20 bg-custom-red hover:bg-custom-red-hover text-white rounded-xl items-center justify-center shadow-custom-red">
 					<h1 className="font-alte-bold text-3xl">{props.choice}</h1>
 				</div>
 			</button>
