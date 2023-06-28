@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 // Local imports
 import QuizContext from "../context/QuizContext";
@@ -65,7 +66,7 @@ const QuizOption = (props) => {
 	return (
 		<>
 			<button onClick={handleQuizInput} disabled={isDisabled}>
-				<div className={`flex w-96 h-20 ${backgroundColor} text-white rounded-lg items-center text-left px-12`}>
+				<div className={`flex w-[26rem] h-20 ${backgroundColor} text-white rounded-lg items-center text-left px-12`}>
 					<h1 className="font-alte-bold text-2xl">{props.choice}</h1>
 				</div>
 			</button>

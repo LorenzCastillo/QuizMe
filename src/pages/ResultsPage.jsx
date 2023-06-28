@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import QuizContext from "../context/QuizContext";
 // 3rd Party Imports
 import { useContext, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const ResultsPage = () => {
 

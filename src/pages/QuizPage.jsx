@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 // Local Imports
 import Navbar from "../components/Navbar";
 import QuizOption from "../components/QuizOption";
@@ -49,6 +50,7 @@ const QuizPage = () => {
 				setFetchedData(true);
 			})
 			.catch(error => {
+				// eslint-disable-next-line no-console
 				console.log(error);
 			});
 	};
