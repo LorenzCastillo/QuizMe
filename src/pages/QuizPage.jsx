@@ -111,7 +111,7 @@ const QuizPage = () => {
 		<>
 			<Navbar/>
 			<div className={`flex flex-col w-full my-10 items-center ${animateState}`}>
-				<div className="lg:w-[62rem] md:w-[40rem] w-[24rem] h-32">
+				<div className="flex md:flex-wrap lg:w-[62rem] md:w-[40rem] w-[24rem] md:h-32 justify-center">
 					<h1 className="font-alte-bold text-3xl text-white text-center">#{questionsAnswered + 1}: {quiz[questionsAnswered].question}</h1>
 				</div>
 
