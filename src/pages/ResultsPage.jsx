@@ -2,7 +2,7 @@
 import Navbar from "../components/Navbar";
 import QuizContext from "../context/QuizContext";
 // 3rd Party Imports
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const ResultsPage = () => {
@@ -10,6 +10,10 @@ const ResultsPage = () => {
 	const [animateState, setAnimateState] = useState("");
 	const currentLocation = useLocation().pathname.split("/");
 	const navigate = useNavigate();
+
+	useEffect(() => {
+		document.title = "Results - QuizMe";
+	}, []);
 
 	const handleButtonClick = () => {
 		setAnimateState("animate-fadeOut");
