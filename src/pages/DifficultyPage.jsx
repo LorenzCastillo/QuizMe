@@ -2,10 +2,14 @@
 import DifficultyChoice from "../components/DifficultyChoice";
 import Navbar from "../components/Navbar";
 // 3rd Party Imports
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const DifficultyPage = () => {
 	const [animateState, setAnimateState] = useState("");
+
+	useEffect(() => {
+		document.title = "Quiz Difficulty - QuizMe";
+	}, []);
 
 	const handleToggleAnimation = () => {
 		setAnimateState("animate-pageTurnOut");

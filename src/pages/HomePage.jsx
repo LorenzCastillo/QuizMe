@@ -3,12 +3,16 @@ import ChooseQuizCard from "../components/ChooseQuizCard";
 import Navbar from "../components/Navbar";
 import Categories from "../../categories.json";
 // 3rd Party Imports
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Footer from "../components/Footer";
 
 const HomePage = () => {
 	const [categories] = useState(Categories);
 	const [animateState, setAnimateState] = useState("");
+
+	useEffect(() => {
+		document.title = "Home - QuizMe";
+	}, []);
 
 	const handleToggleAnimation = () => {
 		setAnimateState("animate-pageTurnOut");

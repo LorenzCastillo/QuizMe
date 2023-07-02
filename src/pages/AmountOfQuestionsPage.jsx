@@ -2,10 +2,14 @@
 import AmountChoice from "../components/AmountChoice";
 import Navbar from "../components/Navbar";
 // 3rd Party Imports
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const AmountOfQuestionsPage = () => {
 	const [animateState, setAnimateState] = useState("");
+
+	useEffect(() => {
+		document.title = "Choose Amount - QuizMe";
+	}, []);
 
 	const handleToggleAnimation = () => {
 		setAnimateState("animate-pageTurnOut");
