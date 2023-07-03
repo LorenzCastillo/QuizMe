@@ -9,7 +9,7 @@ const Navbar = () => {
 
 	return (
 		<>
-			<div className="w-screen h-28 bg-custom-grey px-[15%] sticky top-0 z-40">
+			<div className="w-screen h-28 bg-custom-grey px-[15%] sticky top-0 z-10">
 				<div className="flex flex-row h-28 items-center">
 					<h1 className="font-alte-bold text-4xl">
 						<Link to={"/"}>
