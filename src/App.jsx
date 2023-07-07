@@ -6,6 +6,7 @@ import DifficultyPage from "./pages/DifficultyPage";
 import QuizPage from "./pages/QuizPage";
 import ResultsPage from "./pages/ResultsPage";
 import QuizContext from "./context/QuizContext";
+import Response from "./pages/Response";
 // 3rd Party Imports
 import { useRoutes } from "react-router-dom";
 import { useState } from "react";
@@ -85,6 +86,13 @@ const App = () => {
 				resetValues
 			}}>
 				<ResultsPage />
+			</QuizContext.Provider>
+		},
+		{
+			path: "/api",
+			element:
+			<QuizContext.Provider value={{}}>
+				<Response />
 			</QuizContext.Provider>
 		}
 	]);
